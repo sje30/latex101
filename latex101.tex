@@ -2,6 +2,8 @@
 %%\documentclass[notes]{beamer}
 \usepackage{etex}
 
+
+
 %% Default will be false for \handouts; it can be set to true within
 %% the Makefile.
 
@@ -10,8 +12,13 @@
 \usepackage{showexpl,xspace}
 \usepackage{ifthen}
 \usepackage{amsmath}
+\usepackage{xspace}
+\usepackage{xskak}
+
+\providecommand*{\latex}{\LaTeX\xspace}
 
 \providecommand*{\handouts}{false}
+
 \ifthenelse{\equal{\handouts}{true}}
 {\usepackage{pgfpages}
   \pgfpagesuselayout{4 on 1}[a4paper,landscape]}
@@ -113,13 +120,25 @@
     formatting papers/books.
   \item Logical markup of your document (like HTML) rather than
     specifying exactly how you want it look.
-  \item Use Word (or document of your choice) if you want to.
+  \item Use Word (or program of your choice) if you want to.
 
-  \item You can typeset music, chessboards, wiring diagrams, ...
+  \item These slides are written in \latex using the ``beamer'' package.
 
-  \item These slides are written in matex using the ``beamer'' package.
+  \item You can typeset music, wiring diagrams, chess \ldots
 
   \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  %%\frametitle{Chess}
+  %% This uses the xskak package.  "skak" is "chess" in Danish.
+  %% Example taken from http://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/xskak/xskak.pdf
+  \begin{LTXexample}[pos=b,rframe={}]
+\newchessgame
+\mainline{1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6}
+\chessboard
+  \end{LTXexample}
+
 \end{frame}
 
 
@@ -139,9 +158,7 @@
 
 
 \begin{frame}[fragile]
-  \frametitle{Another example}
-
-Taken from \url{showexpl-test.tex}
+  \frametitle{Another example {\tiny (Taken from \url{showexpl-test.tex})}}
 \begin{LTXexample}[pos=b,wide,width=.65,preset=\LARGE,rframe={}]
 \documentclass[a4paper,twoside]{article}
 \begin{document}
@@ -157,20 +174,26 @@ Taken from \url{showexpl-test.tex}
 \begin{frame}
   \frametitle{Getting started}
 
-  Install texstudio or some other latex.  Lots of editors/GUIs
-  available.
+  \begin{itemize}
+  \item   \latex is free to download.  
 
-  \url{http://www.lyx.org} = latex engine + WYSIWG interface.
-  
-  texstudio handles all the compilation steps for you and provides
-  easy way of forward/inverse searching (Ctrl+ left mouse button).
-  
+  \item   Can use it from the command line.
+
+  \item   Or Lots of editors/GUIs available.
+
+  \item   I suggest trying texstudio.  It handles all the compilation steps
+  for you and provides easy way of forward/inverse searching (Ctrl+
+  left mouse button).
+
+\item \url{http://www.lyx.org} = latex engine + WYSIWG interface.
+\end{itemize}
+
 \end{frame}
 
 \begin{frame}
   \frametitle{Welcome to the 21st century}
 
-  Many matex guides describe how you can create .dvi files and .ps
+  Many \latex guides describe how you can create .dvi files and .ps
   (postscript) files.  
 
   Ignore that; we typically create .pdf files now, via 'pdflatex'.
@@ -180,22 +203,43 @@ Taken from \url{showexpl-test.tex}
 
 \end{frame}
 
+
+
 \begin{frame}[fragile]
-  \frametitle{matex syntax - commands}
+  \frametitle{\latex syntax - commands}
 
   \begin{itemize}
-  \item matex commands start with backslash and are case-sensitive:
+  \item \latex commands start with backslash and are case-sensitive:
 
     \begin{LTXexample}[pos=b]
       The \large cat \LARGE sat on \Huge the \normalsize mat
     \end{LTXexample}
 
-    \item Commands can take compulsory {} and optional [] arguments.
+    \item Commands can take compulsory \{ \ldots \} and optional [
+      \ldots ] arguments.
       \begin{LTXexample}[pos=b]
         A \rule{10mm}{3mm}  B \rule[-1mm]{10mm}{3mm}  
       \end{LTXexample}
   \end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Space}
+  
+
+  \begin{LTXexample}[pos=b]
+Multiple   spaces   between words are treated as 
+one space.  
+
+Blank lines denote
+paragraph separators.
+
+Use a non-breaking space, like 3~mm, to prevent line-breaks.  Even
+better for separating numbers from units, try a small non-breaking
+space, e.g. 3\,mm.
+  \end{LTXexample}
+\end{frame}
+
 
 
 \begin{frame}[fragile]
@@ -223,7 +267,7 @@ functionality.  They can be nested.
   \frametitle{Typesetting math}
 
   \begin{enumerate}
-  \item matex normally is in tex mode.  You must switch to math mode
+  \item \latex normally is in tex mode.  You must switch to math mode
     using \$ to get into and out of math.
 \begin{LTXexample}[pos=b]
   This equation $x^2 + y^2 = z^2$ is in-line; compare with:
@@ -240,7 +284,7 @@ functionality.  They can be nested.
 
 
 \begin{frame}
-  \frametitle{amsmath -- AMS mathematical facilities for matex}
+  \frametitle{amsmath -- AMS mathematical facilities for \latex}
 
   \url{http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf}
 
@@ -251,12 +295,37 @@ functionality.  They can be nested.
 \end{frame}
 \begin{frame}
   \frametitle{Universe of mathematics symbols and operators}
+
+
+  \url{http://mirror.ox.ac.uk/sites/ctan.org/info/symbols/comprehensive/symbols-a4.pdf}
+
+  contains $\sim$6000 symbols and \latex commands to
+  generate them.  e.g. see Table 97 for inequalities:
+
+  \centerline{\includegraphics[width=9cm]{table97-a4symbols.png}}
+
+
 \end{frame}
 
 \begin{frame}
-  \frametitle{Finding maths operators}
+  \frametitle{Finding maths operators the ``modern'' way}
 
-websites to check.  Draw on it.
+  \begin{itemize}
+  \item Draw some equations and it will try to render it in latex or
+    mathml:
+
+    Wolfram: graph an equation, with latex output.
+    \url{http://webdemo.myscript.com/\#/demo/equation}
+    %% needed to escape hash
+
+  \item http://detexify.kirelabs.org/classify.html
+
+
+
+  \end{itemize}
+
+
+
 \end{frame}
 
 
@@ -276,7 +345,7 @@ websites to check.  Draw on it.
   \end{LTXexample}
 
 \textit{Typesetting mathematics for science} has many hints for
-getting things just write, e.g. the differential operator ``d'' as in
+getting things ``just right'', e.g. the differential operator ``d'' as in
 ``dx'' and partial, total derivatives:
 
 \url{http://www.tug.org/TUGboat/Articles/tb18-1/tb54becc.pdf}
@@ -285,40 +354,64 @@ getting things just write, e.g. the differential operator ``d'' as in
 \end{frame}
 
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Bibliography / citations}
 
-See intro.tex for detailed guide.
+Entries like the following are stored in a bibliography file:
+
+\begin{verbatim}
+@article{ihaka1996,
+  author =    {R. Ihaka and R. Gentleman},
+  title =     {R: A Language for Data Analysis and Graphics},
+  journal =   {Journal of Computational and Graphical Statistics},
+  year =      1996,
+  volume =    5,
+  pages =     {299--314}
+}
+\end{verbatim}
+
+which you can then cite using e.g.
+\begin{verbatim}
+We used the R programming environment \cite{ihaka1996}
+for our analysis.
+\end{verbatim}
+
+To create:
+
+
+\begin{verbatim}
+We used the R programming environment (Ihaka and Gentelman, 
+1996) for our analysis.
+\end{verbatim}
+
+and references at end.  See \url{texintro/intro.tex}
+for more info.
+
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Creating a bibliography}
+
+  \begin{enumerate}
+  \item Create it by hand.  Slow, tedious, and error-prone.
+  \item Grab them from Google scholar, e.g. 
+    \url{http://scholar.google.co.uk/scholar?q=ihaka+gentleman}.  The
+    cite link takes you to the formats for citing (you may need to
+    configure google scholar.
+    
+  \end{enumerate}
 zotero/paperpile/mendeley/google scholar all generate good bibtex
 entries.
 
+
 \end{frame}
+
 
 
 
 \begin{frame}[fragile]
-  \frametitle{Space}
-
-  \begin{itemize}
-  \item Multiple space characters treated as one space.
-  \item Blank lines denote paragraph separators.
-  \item Non-breaking space \verb+3~mm+ $\Rightarrow$ 3~mm
-  \item Small non-breaking space \verb+3\,mm+ $\Rightarrow$ 3\,mm
-  \end{itemize}
-\end{frame}
-\begin{frame}
-  \frametitle{Command line material \adv }
-
-  If you run from the command line, you need to follow instructions on
-  how often to re-reun matex to resolve references.
-
-  latexmk, texi2pdf help with this problem.
-
-\end{frame}
-
-
-\begin{frame}[fragile]
-  \frametitle{Preamable}
+  \frametitle{Preamble}
 
   \begin{enumerate}
   \item Everything before the \verb+begin{document}+ is the preamble.
@@ -355,9 +448,13 @@ entries.
 
   \begin{itemize}
   \item Floats are objects (tables, figures) that move in your
-    document; matex will move them to somewhere it thinks sensible.
+    document; \latex will move them to somewhere it thinks sensible.
   \item If you don't like where it put a float, relax.  You can give
-    it hints, but normally it does a good job.
+    it hints, but normally it does a good job.  
+
+
+  \item This is the \latex philosophy in general -- let it worry about
+    layout so that you worry about content.
   \item You can then refer to figures/tables by labels.
   \end{itemize}
 \end{frame}
@@ -365,7 +462,7 @@ entries.
 \begin{frame}[fragile]
   \frametitle{Tables}
 
-  \begin{LTXexample}[pos=b]
+  \begin{LTXexample}[pos=b,rframe={}]
 \begin{table}
   \centering
   \begin{tabular}{|l|rr|}  \hline
@@ -377,34 +474,6 @@ entries.
   \caption{Fictional min/max temperatures.} \label{tab:simple}
 \end{table}
   \end{LTXexample}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Figures}
-
-  \begin{LTXexample}
-\begin{figure}
-  \centering
-  \fbox{\includegraphics[width=6cm]{sigmoid}}
-  \caption{Example of a sigmoidal curve.}
-  \label{fig:example}
-\end{figure}
-  \end{LTXexample}
-
-Looks for file in current directory (or you can keep a path of figures).
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{History of matex}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Advanced topics}
-
-  lualatex is the long-term future.
-
-  Reproducible research documents.
 \end{frame}
 
 
@@ -425,6 +494,54 @@ Looks for file in current directory (or you can keep a path of figures).
           \end{LTXexample}
   \end{enumerate}
 \end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Figures}
+
+  \begin{LTXexample}[pos=b,rframe={}]
+\begin{figure}
+  \centering
+  \fbox{\includegraphics[width=4cm]{sigmoid}}
+  \caption{Example of a sigmoidal curve.}
+  \label{fig:example}
+\end{figure}
+  \end{LTXexample}
+
+Looks for file in current directory (or you can keep a path of figures).
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{History of \latex}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Advanced topics}
+
+  \begin{description}
+
+  \item[mathml] \url{http://docs.mathjax.org/en/latest/tex.html} 
+    latex in your web pages is converted to mathml, and then rendered.
+  \item[lualatex] Embedded programming language (LUA) within latex.
+  \item[Reproducible research] 
+  \url{https://github.com/sje30/waverepo/blob/master/paper/waverepo_paper.Rnw}
+  \url{http://www.gigasciencejournal.com/content/3/1/3}
+
+\item[markdown] If latex looks too cumbersome/heavyweight, write in
+  markdown, which can then be converted to .tex (.pdf) or .html or
+  .doc by \url{http://johnmacfarlane.net/pandoc/}
+    
+  \end{description}
+
+
+
+  
+
+
+
+\end{frame}
+
+
 \begin{frame}
   \frametitle{Getting help}
   \begin{enumerate}
@@ -436,23 +553,43 @@ Looks for file in current directory (or you can keep a path of figures).
 
   \item Keep it simple for now!  Focus on the content, not the form.
 
-  \item \textit{The matex companion} lists vast number of packages.
+  \item \textit{The \latex companion} lists vast number of packages.
   \end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Further reading}
+
+Lamport L (1994) LATEX: a Document Preparation System : User’s Guide
+and Reference Manual.
+
+Kopka and Daly (2003) A Guide to LATEX (Tools and Techniques for
+Computer Typesetting).
+
+Mittelbach  et al (2004.) The Latex Companion.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Command line material \adv }
+
+  If you run from the command line, you need to follow instructions on
+  how often to re-reun \latex to resolve references.
+
+  latexmk, texi2pdf help with this problem.
+
 \end{frame}
 
 \begin{frame}
   \frametitle{TODO}
-Draw some equations and it will try to render it in latex or mathml.
 
-http://webdemo.myscript.com/#/demo/equation wolfram thing for text ->
-latex
 
-http://mirror.ox.ac.uk/sites/ctan.org/info/symbols/comprehensive/symbols-a4.pdf
-
-http://detexify.kirelabs.org/classify.html
 
 superscripts: can omit braces if superscript is one character: $x^3$
 versus $x^{19}$ versus $x^19$.
+
+Acknowledgements: thanks to Robert Stojnic and Markus Kuhn, who wrote
+similar lectures and shared material.
 
 \end{frame}
 
