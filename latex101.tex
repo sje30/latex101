@@ -130,43 +130,42 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  %%\frametitle{Chess}
+  %% \frametitle{Chess}
   %% This uses the xskak package.  "skak" is "chess" in Danish.
   %% Example taken from http://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/xskak/xskak.pdf
   \begin{LTXexample}[pos=b,rframe={}]
-\newchessgame
-\mainline{1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6}
-\chessboard
+    \newchessgame
+    \mainline{1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6}
+    \chessboard
   \end{LTXexample}
-
 \end{frame}
 
 
 \begin{frame}[fragile]
   \frametitle{``Hello world'' example}
 
-\section*{hi there}
+  \section*{hi there}
   \begin{LTXexample}[pos=b,rframe={}]
-  \documentclass{article}
-  \begin{document}
+    \documentclass{article}
+    \begin{document}
     Hello world.  Welcome to \LaTeX.
   \end{document}
 \end{LTXexample}
 %% Complicated begin/end documents don't work in beamer.
-%%http://tex.stackexchange.com/questions/6006/how-to-use-showexpl-with-an-external-class
+%% http://tex.stackexchange.com/questions/6006/how-to-use-showexpl-with-an-external-class
 \end{frame}
 
 
 \begin{frame}[fragile]
   \frametitle{Another example {\tiny (Taken from \url{showexpl-test.tex})}}
-\begin{LTXexample}[pos=b,wide,width=.65,preset=\LARGE,rframe={}]
-\documentclass[a4paper,twoside]{article}
-\begin{document}
-  \begin{equation}
-    \sigma(t)=\frac{1}{\sqrt{2\pi}}
-    \int^t_0 e^{-x^2/2} dx 
-  \end{equation}
-\end{document}
+  \begin{LTXexample}[pos=b,wide,width=.65,preset=\LARGE,rframe={}]
+    \documentclass[a4paper,twoside]{article}
+    \begin{document}
+    \begin{equation}
+      \sigma(t)=\frac{1}{\sqrt{2\pi}}
+      \int^t_0 e^{-x^2/2} dx 
+    \end{equation}
+  \end{document}
 \end{LTXexample}
 
 \end{frame}
@@ -179,28 +178,29 @@
 
   \item   Can use it from the command line.
 
-  \item   Or Lots of editors/GUIs available.
+  \item  Lots of editors/GUIs available.
 
-  \item   I suggest trying texstudio.  It handles all the compilation steps
-  for you and provides easy way of forward/inverse searching (Ctrl+
-  left mouse button).
+  \item  I suggest trying \textit{texstudio}.  It handles all the compilation steps
+    for you and provides easy way of forward/inverse searching (Ctrl +
+    left mouse button).
 
-\item \url{http://www.lyx.org} = latex engine + WYSIWG interface.
-\end{itemize}
+  \item \url{http://www.lyx.org} = latex engine + WYSIWYG interface.
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}
   \frametitle{Welcome to the 21st century}
 
-  Many \latex guides describe how you can create .dvi files and .ps
-  (postscript) files.  
+  \begin{enumerate}
+  \item   Many \latex guides describe how you can create .dvi files and .ps
+    (postscript) files.  
+  \item   Ignore that; we typically create .pdf files now, via
+    'pdflatex'.
+  \item   Create your graphs etc in pdf wherever you can, else png/jpg (not
+    postscript).
 
-  Ignore that; we typically create .pdf files now, via 'pdflatex'.
-
-  Create your graphs etc in pdf wherever you can, else png/jpg (not
-  postscript).
-
+    \end{enumerate}
 \end{frame}
 
 
@@ -219,6 +219,12 @@
       \ldots ] arguments.
       \begin{LTXexample}[pos=b]
         A \rule{10mm}{3mm}  B \rule[-1mm]{10mm}{3mm}  
+      \end{LTXexample}
+    \item You can sometimes drop \{ and \}:
+      \begin{LTXexample}[pos=b]
+        e.g. if superscript is one character: compare $x^3$ with
+        $x^{19}$ and with $x^19$.
+
       \end{LTXexample}
   \end{itemize}
 \end{frame}
@@ -267,7 +273,7 @@ functionality.  They can be nested.
   \frametitle{Typesetting math}
 
   \begin{enumerate}
-  \item \latex normally is in tex mode.  You must switch to math mode
+  \item \latex normally is in text mode.  You must switch to math mode
     using \$ to get into and out of math.
 \begin{LTXexample}[pos=b]
   This equation $x^2 + y^2 = z^2$ is in-line; compare with:
@@ -345,9 +351,7 @@ functionality.  They can be nested.
   \end{LTXexample}
 
 \textit{Typesetting mathematics for science} has many hints for
-getting things ``just right'', e.g. the differential operator ``d'' as in
-``dx'' and partial, total derivatives:
-
+getting things ``just right'', e.g. the differential operator, partial, total derivatives:
 \url{http://www.tug.org/TUGboat/Articles/tb18-1/tb54becc.pdf}
 
 
@@ -363,7 +367,7 @@ Entries like the following are stored in a bibliography file:
 @article{ihaka1996,
   author =    {R. Ihaka and R. Gentleman},
   title =     {R: A Language for Data Analysis and Graphics},
-  journal =   {Journal of Computational and Graphical Statistics},
+  journal =   {Journal of Computational . . . Statistics},
   year =      1996,
   volume =    5,
   pages =     {299--314}
@@ -380,7 +384,7 @@ To create:
 
 
 \begin{verbatim}
-We used the R programming environment (Ihaka and Gentelman, 
+We used the R programming environment (Ihaka and Gentleman, 
 1996) for our analysis.
 \end{verbatim}
 
@@ -393,16 +397,16 @@ for more info.
 \begin{frame}
   \frametitle{Creating a bibliography}
 
-  \begin{enumerate}
+  \begin{itemize}
   \item Create it by hand.  Slow, tedious, and error-prone.
   \item Grab them from Google scholar, e.g. 
     \url{http://scholar.google.co.uk/scholar?q=ihaka+gentleman}.  The
     cite link takes you to the formats for citing (you may need to
-    configure google scholar.
+    configure google scholar).
+  \item zotero/paperpile/mendeley all generate good bibtex
+    entries.
     
-  \end{enumerate}
-zotero/paperpile/mendeley/google scholar all generate good bibtex
-entries.
+  \end{itemize}
 
 
 \end{frame}
@@ -420,10 +424,10 @@ entries.
 
 
 \begin{verbatim}
-\usepackage{graphicx}           % Needed for including graphics.
-\usepackage{url}                % Facility for activating URLs.
+\usepackage{graphicx}           % Including graphics.
+\usepackage{url}                % active URLs.
 \usepackage[a4paper,margin=2cm]{geometry}
-\usepackage{mathpazo}           % of mathptmx
+\usepackage{mathpazo}           % or mathptmx
 \usepackage{amsmath}            % AMS Maths goodies
 \end{verbatim}
   \end{enumerate}
@@ -483,7 +487,7 @@ entries.
   \begin{enumerate}
   \item For complex documents, rather than writing ``Table 3'', it is
     better to give the Table a label using \verb+\label{results}+, and then refer to that label,
-      using e.g. \verb+See Table \ref{results}+.  
+      using e.g. \verb+See Table~\ref{results}+.  
 
       \item You can also refer to figures, equations, sections in a
         similar way.  
@@ -511,9 +515,6 @@ Looks for file in current directory (or you can keep a path of figures).
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{History of \latex}
-\end{frame}
 
 \begin{frame}
   \frametitle{Advanced topics}
@@ -532,12 +533,6 @@ Looks for file in current directory (or you can keep a path of figures).
   .doc by \url{http://johnmacfarlane.net/pandoc/}
     
   \end{description}
-
-
-
-  
-
-
 
 \end{frame}
 
@@ -561,43 +556,43 @@ Looks for file in current directory (or you can keep a path of figures).
 \begin{frame}
   \frametitle{Further reading}
 
-Lamport L (1994) LATEX: a Document Preparation System : User’s Guide
+Lamport (1994) LATEX: a Document Preparation System : User’s Guide
 and Reference Manual.
 
 Kopka and Daly (2003) A Guide to LATEX (Tools and Techniques for
 Computer Typesetting).
 
-Mittelbach  et al (2004.) The Latex Companion.
+Mittelbach  et al. (2004.) The Latex Companion.
+
+\vspace*{3cm}
+
+\textbf{Acknowledgements} Thanks to Robert Stojnic and Markus Kuhn, who wrote
+similar lectures and shared material.
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{History of \TeX \xspace  and \latex}
+  
+  \TeX\xspace was originally a six-month project in 1978 started by
+  Donald Knuth, which took ten years:
+  
+  \url{http://www.ctan.org/ctan-portal/tex/}
 \end{frame}
 
 \begin{frame}
   \frametitle{Command line material \adv }
 
   If you run from the command line, you need to follow instructions on
-  how often to re-reun \latex to resolve references.
+  how often to re-rerun \latex to resolve references.
 
   latexmk, texi2pdf help with this problem.
 
 \end{frame}
 
-\begin{frame}
-  \frametitle{TODO}
-
-
-
-superscripts: can omit braces if superscript is one character: $x^3$
-versus $x^{19}$ versus $x^19$.
-
-Acknowledgements: thanks to Robert Stojnic and Markus Kuhn, who wrote
-similar lectures and shared material.
-
-\end{frame}
-
-\begin{frame}
-  \frametitle{End}
-\end{frame}
 
 \end{document}
 
-% LocalWords:  Presynaptic heterotypic Homotypic
+% LocalWords:  Eglen 
 
