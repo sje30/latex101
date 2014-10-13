@@ -146,10 +146,10 @@
 
   \section*{hi there}
   \begin{LTXexample}[pos=b,rframe={}]
-    \documentclass{article}
-    \begin{document}
-    Hello world.  Welcome to \LaTeX.
-  \end{document}
+\documentclass{article}
+\begin{document}
+  Hello world.  Welcome to \LaTeX.
+\end{document}
 \end{LTXexample}
 %% Complicated begin/end documents don't work in beamer.
 %% http://tex.stackexchange.com/questions/6006/how-to-use-showexpl-with-an-external-class
@@ -159,13 +159,13 @@
 \begin{frame}[fragile]
   \frametitle{Another example {\tiny (Taken from \url{showexpl-test.tex})}}
   \begin{LTXexample}[pos=b,wide,width=.65,preset=\LARGE,rframe={}]
-    \documentclass[a4paper,twoside]{article}
-    \begin{document}
-    \begin{equation}
-      \sigma(t)=\frac{1}{\sqrt{2\pi}}
-      \int^t_0 e^{-x^2/2} dx 
-    \end{equation}
-  \end{document}
+\documentclass[a4paper,twoside]{article}
+\begin{document}
+\begin{equation}
+  \sigma(t)=\frac{1}{\sqrt{2\pi}}
+  \int^t_0 e^{-x^2/2} dx 
+\end{equation}
+\end{document}
 \end{LTXexample}
 
 \end{frame}
@@ -189,7 +189,7 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Welcome to the 21st century}
 
   \begin{enumerate}
@@ -197,10 +197,16 @@
     (postscript) files.  
   \item   Ignore that; we typically create .pdf files now, via
     'pdflatex'.
-  \item   Create your graphs etc in pdf wherever you can, else png/jpg (not
-    postscript).
+  \item   Create your figures in .pdf or .eps wherever you can, else
+    png/jpg.
 
-    \end{enumerate}
+  \item Matlab users: .eps files have tight bounding boxes, whereas
+    pdf files do not.  However, pdflatex will silently convert \url{sin.eps} to
+    \url{sin-eps-converted-to.pdf} for you:
+    \begin{verbatim}
+    \fbox{\includegraphics[width=6cm]{sin.eps}}
+    \end{verbatim}
+  \end{enumerate}
 \end{frame}
 
 
