@@ -134,7 +134,7 @@
   %% This uses the xskak package.  "skak" is "chess" in Danish.
   %% Example taken from http://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/xskak/xskak.pdf
   \begin{LTXexample}[pos=b,rframe={}]
-    \newchessgame
+    \newchessgame  % from the xskak package
     \mainline{1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6}
     \chessboard
   \end{LTXexample}
@@ -235,6 +235,23 @@
   \end{itemize}
 \end{frame}
 
+
+\begin{frame}[fragile]
+  \frametitle{Special characters}
+
+Some characters are commands.  To type these characters, you normally
+escape them:
+\begin{LTXexample}[pos=b]
+  I got a 30\% discount, saving me a few \$\$\$ \ldots
+\end{LTXexample}
+
+The most common characters that need escaping are:
+\begin{center}
+\verb+\ $ ^ _ % # & ~ { } +
+\end{center}
+
+\end{frame}
+
 \begin{frame}[fragile]
   \frametitle{Space}
   
@@ -251,6 +268,8 @@ better for separating numbers from units, try a small non-breaking
 space, e.g. 3\,mm.
   \end{LTXexample}
 \end{frame}
+
+
 
 
 
@@ -304,6 +323,11 @@ functionality.  They can be nested.
 
   \url{http://mirrors.ctan.org/macros/latex/required/amslatex/math/testmath.pdf}
 
+  \vspace*{1cm}
+
+  This is an example of a package that has been contributed to
+  \latex.  These packages are available on Comprehensive TeX Archive
+  Network (CTAN).  Most of them are downloaded for you when installed \latex.
 \end{frame}
 \begin{frame}
   \frametitle{Universe of mathematics symbols and operators}
