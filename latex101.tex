@@ -103,7 +103,7 @@
   \url{http://www.damtp.cam.ac.uk/user/eglen/teaching/latex}
 }
 
-\date{October 2014}
+\date{October 2015}
 
 \begin{document}
 
@@ -263,7 +263,7 @@ one space.
 Blank lines denote
 paragraph separators.
 
-Use a non-breaking space, like 3~mm, to prevent line-breaks.  Even
+Use a non-breaking space, like 3~mm, to prevent line breaks.  Even
 better for separating numbers from units, try a small non-breaking
 space, e.g. 3\,mm.
   \end{LTXexample}
@@ -303,11 +303,10 @@ functionality.  They can be nested.
 \begin{LTXexample}[pos=b]
   This equation $x^2 + y^2 = z^2$ is in-line; compare with:
   \begin{eqnarray}
-    \label{eq:key}
     I_1 &= \int_0^{2 \pi} \sin (x^2) dx \nonumber \\
     \text{but}\, I_2 &= \int_0^{2 \pi} \cos (x^2) dx \label{key}
   \end{eqnarray}
-  The dx in Equation \ref{key} needs fixing later \ldots
+  The dx in Equation 2 needs fixing later \ldots
 \end{LTXexample}
     
   \end{enumerate}
@@ -516,8 +515,9 @@ for more info.
   \label{labels}
   \begin{enumerate}
   \item For complex documents, rather than writing ``Table 3'', it is
-    better to give the Table a label using \verb+\label{results}+, and then refer to that label,
-      using e.g. \verb+See Table~\ref{results}+.  
+    better to give the Table a label using \verb+\label{tab:simple}+,
+    and then refer to that label, using e.g.
+    \verb+See Table~\ref{tab:simple}+.
 
       \item You can also refer to figures, equations, sections in a
         similar way.  
