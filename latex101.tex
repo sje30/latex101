@@ -1,7 +1,7 @@
 \documentclass[]{beamer}
 %%\documentclass[notes]{beamer}
 \usepackage{etex}
-
+\usepackage[default]{sourcesanspro}
 
 
 %% Default will be false for \handouts; it can be set to true within
@@ -60,6 +60,12 @@
   \nolimits^{#1}\gobblespace}
 \makeatother
 
+
+%%http://tex.stackexchange.com/questions/249437/redefine-latex-command
+\makeatletter
+\renewcommand{\LaTeX}{L\kern -.20em{\sbox \z@ T\vbox to\ht \z@ {\hbox {\check@mathfonts \fontsize \sf@size \z@ \math@fontsfalse \selectfont A}\vss }}\kern -.10em\TeX}
+\makeatother
+
 %% This snippet is from the TeX faq and allows us to use \maxwidth
 %% for the max size of an image.
 \makeatletter
@@ -100,10 +106,10 @@
 \institute{Cambridge Computational Biology Institute\\
   Department of Applied Mathematics and Theoretical Physics\\
   University of Cambridge\\
-  \url{http://www.damtp.cam.ac.uk/user/eglen/teaching/latex}
+  \url{http://sje30.github.io/post/latex2016/}
 }
 
-\date{October 2015}
+\date{October 2016}
 
 \begin{document}
 
@@ -210,6 +216,15 @@
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{Online tools (good for collaboration)}
+
+  \begin{itemize}
+  \item \url{www.overleaf.com}
+  \item \url{www.sharelatex.com}
+  \item Which is better?  \url{http://tex.stackexchange.com/questions/179030/comparison-sharelatex-vs-overleaf-formerly-writelatex}
+  \end{itemize}
+\end{frame}
 
 \begin{frame}[fragile]
   \frametitle{\latex syntax - commands}
@@ -353,7 +368,7 @@ functionality.  They can be nested.
     \url{http://webdemo.myscript.com/\#/demo/equation}
     %% needed to escape hash
 
-  \item http://detexify.kirelabs.org/classify.html
+  \item \url{http://detexify.kirelabs.org/classify.html}
 
 
 
@@ -586,7 +601,7 @@ Looks for file in current directory (or you can keep a path of figures).
 \begin{frame}
   \frametitle{Further reading}
 
-Lamport (1994) LATEX: a Document Preparation System : User’s Guide
+Lamport (1994) LATEX: a Document Preparation System : User's Guide
 and Reference Manual.
 
 Kopka and Daly (2003) A Guide to LATEX (Tools and Techniques for
