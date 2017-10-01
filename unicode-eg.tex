@@ -1,0 +1,28 @@
+\documentclass[12pt]{article}
+\usepackage{unicode-math}
+
+\setmainfont[Ligatures=TeX]{TeX Gyre Pagella}
+%%\setmathfont{TeX Gyre Pagella Math}
+\setmathfont{texgyrepagella-math.otf}
+\begin{document}
+
+The xelatex engine allows for Unicode to be entererd directly into the
+source file.  This may make your source file more readable.
+
+This is some math text entered with math in the source:
+\[
+∀X [ ∅ ∉ X ⇒ ∃f:X ⟶  ⋃ X\ ∀A ∈ X (f(A) ∈ A ) ]\]
+
+This is some math text entered with regular markup
+
+\[
+\forall X [\emptyset \not\in X \Rightarrow \exists f:X \rightarrow  \bigcup X\ 
+    \forall A \in X (f(A) \in A ) ]\]
+
+$∫_ξ^θ f(x)\,dx$
+
+
+%% Examples taken from 
+%% https://tex.stackexchange.com/questions/118244/what-is-the-difference-between-unicode-math-and-mathspec
+
+\end{document}
