@@ -14,6 +14,11 @@ h.pdf: latex101.tex
 	pdflatex -jobname='h' -interaction=nonstopmode \
 	'\newcommand{\handouts}{true}\input{latex101.tex}'
 
+unicode-eg-crop.pdf: unicode-eg.tex
+	xelatex unicode-eg.tex
+	pdfcrop unicode-eg.pdf
+
+
 .PHONY: clean
 
 clean:
