@@ -7,7 +7,7 @@ undergraduates in maths.
 
 This lecture will next be given:
 
-	TBC <!-- Mon 9th October 2-3pm -->
+	Tue 6th November 1-2pm
     Meeting Room 2, Centre for Mathematical Sciences
 
 See also http://sje30.github.io/post/latex2016/ for further details.
