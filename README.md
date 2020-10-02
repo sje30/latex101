@@ -3,6 +3,8 @@
 These are the [slides](latex101.pdf) for a 1 hour lecture introducing LaTeX to
 undergraduates in maths and postgraduates in computational biology.
 
+The slides are also available in [handout](h.pdf) format.
+
 ## 2020 lecture
 
 <!-- This lecture will next be given: -->
